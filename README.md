@@ -1,4 +1,5 @@
 ![Generic badge](https://img.shields.io/badge/build%20status-in--progress-blue)
+
 # Hangman
 
 ## About The Project
