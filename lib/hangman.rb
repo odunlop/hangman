@@ -6,6 +6,7 @@ class Hangman
 
   def initialize
     @guesses = []
+    @word = WORD.generate
   end
 
   def guess(letter)
@@ -17,7 +18,15 @@ class Hangman
     end
   end
 
+  def display_word
+    display = []
+    @word.chars.each do | letter |
+      @guesses.include?(letter) ? display << letter : display << "_"
+    end
+    display.join(" ")
+  end
+
   def check
-    WORD.generate.include?(@letter)
+    @word.include?(@letter)
   end
 end
