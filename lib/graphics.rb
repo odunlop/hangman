@@ -46,4 +46,8 @@ class Graphics
   def draw(index)
     HANGMAN[index].each { |line| puts line}
   end
+
+  def start
+    draw(0)
+  end
 end

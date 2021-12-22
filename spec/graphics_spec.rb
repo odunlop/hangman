@@ -6,12 +6,21 @@ describe Graphics do
     expect(subject).to respond_to(:draw).with(1).argument
   end
   it 'displays the progress of the hangman' do
-    expect(subject.draw(1)). to eq [
+    expect(subject.draw(1)).to eq [
     "  ____ ",
     " |    |",
     " |    O",
     " |    ",
     " |     ",
    "========="].each { |line| puts line}
+  end
+
+  it 'displays the empty gallows' do
+    expect(subject.start).to eq ["  ____ ",
+    " |    |",
+    " |    ",
+    " |    ",
+    " |     ",
+    "========="].each { |line| puts line}
   end
 end
