@@ -44,7 +44,6 @@ describe Hangman do
     subject.display_word
     expect(subject.win?).to eq true
   end
-
 end
   
   # describe '#play_game' do

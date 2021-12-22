@@ -26,29 +26,32 @@ class Hangman
 
   def start_game
     puts "Welcome to Hangman!"
-    @hangman.start
     puts "This game's word is..."
-    p display_word
   end
 
   def play_game
     start_game
     mistakes = 0
     while mistakes < 6
+      @hangman.draw(mistakes)
+      p display_word
+      puts @guesses.join(", ")
       puts "Guess a letter"
       letter = gets.chomp
       guess(letter)
       if check == true
-        p display_word
+        display_word
         if win? == true
-          return p "You won!"
+          p display_word
+          p "You won!"
+          break 
         end
       elsif check == false
         mistakes += 1
-        @hangman.draw(mistakes)
       end
     end
     if mistakes == 6
+      @hangman.draw(6)
       puts "You died!"
     end
   end
@@ -61,7 +64,3 @@ class Hangman
     !@display.include?("_")
   end
 end
-
-
-game = Hangman.new
-game.play_game
