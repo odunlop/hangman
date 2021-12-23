@@ -24,6 +24,16 @@ class Hangman
     @display.join(" ")
   end
 
+  def wrong_guesses
+    list = []
+    @guesses.each do | letter |
+      if !@word.include?(letter)
+        list << letter
+      end
+    end
+    list.join(", ")
+  end
+
   def start_game
     puts "Welcome to Hangman!"
     puts "This game's word is..."
@@ -35,7 +45,7 @@ class Hangman
     while mistakes < 6
       @hangman.draw(mistakes)
       p display_word
-      puts @guesses.join(", ")
+      puts wrong_guesses
       puts "Guess a letter"
       letter = gets.chomp
       guess(letter)

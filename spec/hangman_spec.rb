@@ -44,7 +44,16 @@ describe Hangman do
     subject.display_word
     expect(subject.win?).to eq true
   end
+
+  it 'only displays the incorrect guesses in the list of letters' do
+    allow(Hangman::WORD).to receive(:generate) { "apple"}
+    subject.guess("a")
+    subject.guess("y")
+    subject.guess("r")
+    expect(subject.wrong_guesses).to eq "y, r"
+  end
 end
+
   
   # describe '#play_game' do
   #   context 'displays the next level of the hangman if the guess is wrong' do
