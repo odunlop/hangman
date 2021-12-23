@@ -17,7 +17,7 @@ This project was based off of making a playable version of Hangman in Ruby using
 ## Usage
 This is a 1-player game - once the game is loaded a random word is automatically selected from a bank of words. Below is an example of the starting screen.
 
-The game can be loaded by running the `.start_game` method of an instance of the Hangman class. Only `hangman.rb` is required when running this in `irb` (or a similar application).
+The game can be loaded by running the `.start_game` method on an instance of the Hangman class. Only `hangman.rb` is required when running this in `irb` (or a similar application).
 ```
 Welcome to Hangman!
 This game's word is...
